@@ -1,6 +1,7 @@
 package hu.grocery.model.domain;
 
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Purchase {
 
@@ -24,6 +25,14 @@ public class Purchase {
 
 	public Map<String, Long> getGoodsMap() {
 		return goodsMap;
+	}
+	
+	public boolean hasGoods(String goods) {
+		return goodsMap.containsKey(goods);
+	}
+	
+	public String printGoods() {
+		return goodsMap.entrySet().stream().map(i -> i.getValue() + " " + i.getKey()).collect(Collectors.joining("\r\n"));
 	}
 
 	@Override

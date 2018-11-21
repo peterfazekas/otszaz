@@ -27,7 +27,9 @@ public class App {
 		int id = console.readInt("Adja meg egy vásárlás sorszámát: ");
 		String goods = console.read("Adja meg egy árucikk nevét: ");
 		int count = console.readInt("Adja meg a vásárolt darabszámot: ");
+		System.out.println("5. feladat: " + purchaseFacade.getGoodsDetails(goods));
 		System.out.println("6. feladat: " + count + " darab vételekor a fizetendő: " + purchaseFacade.getValue(count));
+		System.out.println("7. fleadat: \r\n" + purchaseFacade.getGoodsByPurchaseId(id));
 		purchaseFacade.printResult("osszeg.txt");
 	}
 }
